@@ -2,33 +2,29 @@ package main;
 import java.util.Scanner;
 
 public class MatchConfig {
+	
+	Scanner TeamNames = new Scanner(System.in);
 
-// Set Team A
+ // Set Team A
 	public String TeamA() {
 		
-		String TeamA;
-		Scanner TeamNames = new Scanner(System.in);
-		
+		String TeamA;	
 		System.out.println("Type Team A Name");
-		TeamA = TeamNames.nextLine();
 		
-		TeamNames.close();
-		
+		TeamA = TeamNames.nextLine();	
 		return TeamA;
 	}
 
 // Set Team B	
 public String TeamB() {
 		
-		String TeamB;
-		Scanner TeamNames = new Scanner(System.in);
-		
+		String TeamB;		
 		System.out.println("Type Team B Name");
-		TeamB = TeamNames.nextLine();
 		
-		TeamNames.close();
+		TeamB = TeamNames.nextLine();
 		return TeamB;
 	}
+	
 	
 // Match Heading on top of the Score-Panel
 public String PrintMatchHeading() {
