@@ -15,7 +15,11 @@ public class CoinToss {
 		
 		if(a == 0) {
 			return Heads;
-		} else return Tails;
+			
+		} else 
+			return Tails;
 	}
+	
 
 }
+
