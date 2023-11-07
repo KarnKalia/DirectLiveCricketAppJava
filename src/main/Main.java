@@ -1,9 +1,13 @@
 package main;
 
+
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Testing Git");
+
+		CoinToss round1 = new CoinToss();
+		
+		System.out.println(round1.Toss());
 
 	}
 
