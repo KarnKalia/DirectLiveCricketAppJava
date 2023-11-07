@@ -20,7 +20,6 @@ public String TeamB() {
 		
 		String TeamB;		
 		System.out.println("Type Team B Name");
-		
 		TeamB = TeamNames.nextLine();
 		return TeamB;
 	}
