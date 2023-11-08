@@ -6,7 +6,8 @@ public class Main {
 
 		// CoinToss round1 = new CoinToss();
 		   MatchConfig round1 = new MatchConfig(); 
-		   System.out.println(round1.PrintMatchHeading());
+		   
+		   System.out.println(round1.Match());
 	}
 
 }

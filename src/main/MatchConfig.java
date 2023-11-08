@@ -3,32 +3,45 @@ import java.util.Scanner;
 
 public class MatchConfig {
 	
-	Scanner TeamNames = new Scanner(System.in);
+Scanner MatchSettings = new Scanner(System.in);
 
- // Set Team A
-	public String TeamA() {
+// Set Match date
+	public String MatchDate() {
+		System.out.println("Type Match date DD-MM-YYYY");
+		String MatchDate = MatchSettings.next();
 		
-		String TeamA;	
+		return MatchDate;
+	}
+// Set Team A
+	public String TeamA() {
+			
 		System.out.println("Type Team A Name");
 		
-		TeamA = TeamNames.nextLine();	
+		String TeamA = MatchSettings.nextLine();
 		return TeamA;
 	}
 
 // Set Team B	
 public String TeamB() {
-		
-		String TeamB;		
+				
 		System.out.println("Type Team B Name");
-		TeamB = TeamNames.nextLine();
+		String TeamB = MatchSettings.nextLine();
 		return TeamB;
 	}
 	
+//Set Format Type
+public String Format() {
+	System.out.println("Type match overs per side (Numbers Only)");
+	int Over = MatchSettings.nextInt();
 	
-// Match Heading on top of the Score-Panel
-public String PrintMatchHeading() {
-		
-		return TeamA() + " " + "VS" + " " + TeamB();		
+	return Over + " " + "Over Match";
+}
+
+//Match Heading on top of the Score-Panel
+public String Match() {
+			
+		return TeamA() + " " + "VS" + " " + TeamB() +"\n"+ Format() + "\n" + "Game Date(s)" + " " + MatchDate();		
 	}
 
+// Code barrier 
 }
