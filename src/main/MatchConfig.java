@@ -13,18 +13,18 @@ public class MatchConfig {
 		return MatchDate;
 	}
 	// Set Team A
-	public String TeamA() {
+	public String homeTeam() {
 
-		System.out.println("Type Team A Name");
+		System.out.println("Type Home Team Name");
 
 		String TeamA = MatchSettings.nextLine();
 		return TeamA;
 	}
 
 	// Set Team B	
-	public String TeamB() {
+	public String awayTeam() {
 
-		System.out.println("Type Team B Name");
+		System.out.println("Type Away Team Name");
 		String TeamB = MatchSettings.nextLine();
 		return TeamB;
 	}
@@ -36,17 +36,33 @@ public class MatchConfig {
 
 		return Over;
 	}
+	
+	// Select Bat or Bowl 
+	
+	public String batOrBowl() {
+		
+		System.out.println("Type \'1' or \'2':" + "\n 1: Bat" + "\n 2: Bowl");
+		
+		String Bat = "Bat";
+		String Bowl = "Bowl";
+		
+		int choose = MatchSettings.nextInt();
+		System.out.println(choose);
+		
+		if (choose == 1) {
+			return Bat;
+		}else if (choose == 2) {
+			return Bowl;
+		}return batOrBowl();
+		
+	}
 
 	//Match Heading on top of the Score-Panel
 	public String Match() {
 
-		return TeamA() + " " + "VS" + " " + 
-		       TeamB() +"\n"+ Format() + "\n" + 
-               "Game Date(s)" + " " + MatchDate();
-		
-		
-		
-		
+		return homeTeam() + " " + "VS" + " " + 
+		       awayTeam() +"\n"+ Format() + "\n" + 
+               "Game Date(s)" + " " + MatchDate();	
 	}
 
 	// Code barrier 

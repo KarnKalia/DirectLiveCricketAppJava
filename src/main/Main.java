@@ -4,25 +4,28 @@ public class Main {
 
 	public static void main(String[] args) {
 
-	// Setup Match 
-		MatchConfig Game = new MatchConfig();
+		// Setup Match 
+		MatchConfig GameSetup = new MatchConfig();
 		CoinToss Toss = new CoinToss();
-		
-	// 1.  Setup Team Names 
-		String nameTeamA = Game.TeamA();
+
+		// Setup Team Names 
+		String nameTeamA = GameSetup.homeTeam();
 		System.out.println(nameTeamA);
-		
-		String nameTeamB = Game.TeamB();
+
+		String nameTeamB = GameSetup.awayTeam();
 		System.out.println(nameTeamB);
-		
-	// Select Match Format (No. of overs per side)
-		int gameFormat = Game.Format();
+
+		// Select Match Format (No. of overs per side)
+		int gameFormat = GameSetup.Format();
 		System.out.println(gameFormat);
-		
-	// Coin Toss 
+
+		// Coin Toss 
 		String tossWinner = Toss.nameToss(nameTeamA, nameTeamB);
 		System.out.println("Toss won by" + " " + tossWinner);
-		
+
+		// Toss winner choose to Bat or Ball 
+		String tossWinnerChoice = GameSetup.batOrBowl();
+		System.out.println(tossWinner + " " + "won the Toss and decided to" + " " + tossWinnerChoice + " " + "first!");		
 	}
 
 }

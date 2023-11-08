@@ -3,6 +3,8 @@ import java.util.Random;
 
 
 public class CoinToss {
+	
+// Manual Coin Toss	
 
 	public String Toss() {
 
@@ -19,6 +21,8 @@ public class CoinToss {
 		} else 
 			return Tails;
 	}
+	
+// Coin Toss Generated during Setup
 	
 	public String nameToss(String Heads, String Tails) {
 
