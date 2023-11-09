@@ -1,4 +1,5 @@
 package main;
+
 import java.util.Scanner;
 
 public class MatchConfig {
@@ -29,13 +30,45 @@ public class MatchConfig {
 		return TeamB;
 	}
 
-	//Set Format Type
-	public int Format() {
+	public String Format() {
+		
 		System.out.println("Type match overs per side (Numbers Only)");
-		int Over = MatchSettings.nextInt();
-
-		return Over;
+		String Overs = MatchSettings.nextLine();
+		
+		while (stringCheck(Overs)) {
+			System.out.println("Type match overs per side (Numbers Only)");
+			Overs = MatchSettings.nextLine();	
+		}
+		return Overs;
 	}
+	
+	
+// Check each character if its a number 		
+	public boolean stringCheck(String input) {
+		
+		boolean hasString = false;
+		int index = 0;
+		
+		while (index < input.length()) {
+			if (!(input.charAt(index) >= '0' && input.charAt(index) <= '9')) {
+				hasString = true;
+			}
+			index++;
+		} return hasString;
+	}
+		
+//
+//	  public int gameSetOvers() {
+//		  int Overs = Format();
+//		  
+//		  if ((Overs > 0)&& (Overs <= 100)) {
+//			  
+//			  return Overs;
+//		
+//		  } return Format();
+//		  
+//	  }
+
 
 	// Select Bat or Bowl 
 
