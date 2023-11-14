@@ -1,10 +1,12 @@
 package main;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class MatchConfig {
 
+public class MatchConfig {
+	CheckNumbers numCheck = new CheckNumbers();
 	Scanner MatchSettings = new Scanner(System.in);
 
 	// Set Match date
@@ -15,67 +17,42 @@ public class MatchConfig {
 		return MatchDate;
 	}
 	// Set Team A
-	public String homeTeam() {
+	public String[] teamSelection() {
 
 		System.out.println("Type Home Team Name");
 
-		String TeamA = MatchSettings.nextLine();
+		String TeamA[] = new String[3];
+
+		TeamA[0] = MatchSettings.nextLine();
+
+		for(int i = 1; i < TeamA.length; i++) {
+			System.out.println("Type Player" + " " + i + " " + "Name");
+			TeamA[i] = MatchSettings.nextLine();
+		}
 		return TeamA;
 	}
-	
 
-	public String[] playerNames() {
-		
-		System.out.println("Type Player Names");
-		String[] players = new String[2];
-		
-		int count = 1;
-		
-		for (int i = 0; i <= players.length-1; i++) {
-			System.out.println("Player:" + " " + count);
-			String add = MatchSettings.nextLine();
-			players[i] = add;
-			count++;			
-		} return players;
-		
+	//	public String Format() {
+	//
+	//		System.out.println("Type match overs per side (Numbers Only)");
+	//		String Overs = MatchSettings.nextLine();
+	//
+	//		while (numCheck.stringCheck(Overs)) {
+	//			System.out.println("Error: Enter Numbers Only");
+	//			Overs = MatchSettings.nextLine();	
+	//		}
+	//		return Overs;
+	//	}
 
+	// need this code test for later, fix exceptions 
+	public int Format() {
+
+		System.out.println("Select Overs between ( 0 & 100)");
+		int overs = MatchSettings.nextInt();		
+		if ((overs > 0 ) && (overs <= 100)) {
+			return overs;
+		}return Format();
 	}
-
-	// Set Team B	
-	public String awayTeam() {
-
-		System.out.println("Type Away Team Name");
-		String TeamB = MatchSettings.nextLine();
-		return TeamB;
-	}
-
-	public String Format() {
-
-		System.out.println("Type match overs per side (Numbers Only)");
-		String Overs = MatchSettings.nextLine();
-
-		while (stringCheck(Overs)) {
-			System.out.println("Error: Enter Numbers Only");
-			Overs = MatchSettings.nextLine();	
-		}
-		return Overs;
-	}
-
-
-	// Check each character if its a number 		
-	public boolean stringCheck(String input) {
-
-		boolean hasString = false;
-		int index = 0;
-
-		while (index < input.length()) {
-			if (!(input.charAt(index) >= '0' && input.charAt(index) <= '9')) {
-				hasString = true;
-			}
-			index++;
-		} return hasString;
-	}
-
 
 	// Select Bat or Bowl 
 
@@ -97,13 +74,21 @@ public class MatchConfig {
 
 	}
 
-	//Match Heading on top of the Score-Panel
-	public String Match() {
+	public String battingTeam(String t, String h, String a, String c) {
 
-		return homeTeam() + " " + "VS" + " " + 
-				awayTeam() +"\n"+ Format() + "\n" + 
-				"Game Date(s)" + " " + MatchDate();	
+		if ((t == h) && (c == "Bat")) {
+			return h;
+		} return a;
+
 	}
+
+	//	//Match Heading on top of the Score-Panel
+	//	public String Match() {
+	//
+	//		return homeTeam() + " " + "VS" + " " + 
+	//				awayTeam() +"\n"+ Format() + "\n" + 
+	//				"Game Date(s)" + " " + MatchDate();	
+	//	}
 
 	// Code barrier 
 }
