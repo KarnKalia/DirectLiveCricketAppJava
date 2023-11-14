@@ -19,9 +19,7 @@ public class MatchConfig {
 	// Set Team A
 	public String[] teamSelection() {
 
-		System.out.println("Type Home Team Name");
-
-		String TeamA[] = new String[3];
+		String TeamA[] = new String[2];
 
 		TeamA[0] = MatchSettings.nextLine();
 

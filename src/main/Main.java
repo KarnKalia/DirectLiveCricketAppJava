@@ -14,13 +14,19 @@ public class Main {
 		CoinToss Toss = new CoinToss();
 		Scoring teamRuns = new Scoring();
 		NewInnings startInnings = new NewInnings();
+		
+		/***********************************************************************************************/
+		
+		int ScoreOne;
 
 		/***********************************************************************************************/
 
 		// Setup HomeTeam Name 
+		System.out.println("Type Home Team Name");
 		String homeTeam[] = GameSetup.teamSelection();
 		System.out.println(Arrays.toString(homeTeam));
-
+		
+		System.out.println("Type Away Team Name");
 		String awayTeam[] = GameSetup.teamSelection();
 		System.out.println(Arrays.toString(awayTeam));
 
@@ -37,14 +43,15 @@ public class Main {
 		System.out.println(tossWinner + " " + "won the Toss and decided to" + " " + tossWinnerChoice + " " + "first!");
 
 		// Step 2. Start Match
-
-		// Select Batsmen
+			
 		String teamScoreDisplay = GameSetup.battingTeam(tossWinner, homeTeam[0], awayTeam[0], tossWinnerChoice);
 		System.out.println("Team batting first:" + " " + teamScoreDisplay);
-		//System.out.println(teamScoreDisplay + ":" + " " + teamRuns.addScore() + "/" + "10(WKTS)");
+		
+		ScoreOne = teamRuns.addScore(teamRuns.ScoreCounter);
+		System.out.println(ScoreOne);
+		System.out.println(teamScoreDisplay + ":" + " " + teamRuns.addScore(gameFormat) + "/" + "10(WKTS)");
 
-		//			int ScoreOne = teamRuns.addScore(teamRuns.ScoreCounter);
-		//			System.out.println(ScoreOne);
+		
 
 	}
 
